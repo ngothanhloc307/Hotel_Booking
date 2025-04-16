@@ -40,7 +40,7 @@ public class NotificationServiceImpl implements NotificationService {
                 .bookingReference(notificationDTO.getBookingReference())
                 .notificationType(NotificationType.EMAIL)
                 .build();
-
+        notificationRepository.save(notificationToSave);
     }
 
     @Override

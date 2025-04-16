@@ -25,7 +25,7 @@ public class HotelBookingApplication implements CommandLineRunner {
         NotificationDTO notificationDTO = NotificationDTO.builder()
                 .type(NotificationType.EMAIL)
                 .recipient("locitc90@gmail.com")
-                .body("This is a test email form command line")
+                .body("This is a test email form command line 02")
                 .subject("Test Email Sending")
                 .build();
         notificationService.sendEmail(notificationDTO);

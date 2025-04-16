@@ -32,7 +32,7 @@ public class User {
 
     @NotBlank(message = "Phone number is required")
     @Column(name = "phone_number")
-    private String PhoneNumber;
+    private String phoneNumber;
 
     @Enumerated(EnumType.STRING)
     private UserRole role; // e.g CUSTOMER, ADMIN

@@ -33,7 +33,7 @@ public class Response {
 
     //Booking data output
     private BookingDTO booking;
-    private List<RoomDTO> bookings;
+    private List<BookingDTO> bookings;
 
     //  data output
     private RoomDTO room;
