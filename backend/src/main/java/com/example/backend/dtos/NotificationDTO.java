@@ -1,6 +1,5 @@
 package com.example.backend.dtos;
 
-
 import com.example.backend.enums.NotificationType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

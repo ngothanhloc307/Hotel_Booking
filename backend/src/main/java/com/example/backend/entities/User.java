@@ -1,5 +1,6 @@
 package com.example.backend.entities;
 
+import com.example.backend.enums.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

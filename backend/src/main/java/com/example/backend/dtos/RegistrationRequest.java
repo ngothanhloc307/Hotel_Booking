@@ -1,6 +1,5 @@
 package com.example.backend.dtos;
 
-
 import com.example.backend.enums.UserRole;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

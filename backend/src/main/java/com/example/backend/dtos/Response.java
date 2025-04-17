@@ -1,6 +1,5 @@
 package com.example.backend.dtos;
 
-
 import com.example.backend.enums.UserRole;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

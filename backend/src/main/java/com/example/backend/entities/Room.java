@@ -1,7 +1,7 @@
 package com.example.backend.entities;
 
-import  jakarta.persistence.*;
-
+import com.example.backend.enums.RoomType;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -19,6 +19,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Room {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,5 +1,8 @@
 package com.example.backend.dtos;
 
+
+import com.example.backend.enums.BookingStatus;
+import com.example.backend.enums.PaymentStatus;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
