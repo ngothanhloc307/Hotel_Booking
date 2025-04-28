@@ -2,6 +2,8 @@ package com.example.backend.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,16 +29,21 @@ public class JwtUtils {
 
     @PostConstruct
     public void init() {
+
+        if (secreteJwtString.length() < 32) {
+            throw new IllegalArgumentException("The secret JWT string must be at least 32 characters.");
+        }
+
         byte[] keyByte = secreteJwtString.getBytes(StandardCharsets.UTF_8);
-        this.key = new SecretKeySpec(keyByte, "HmacSHA256");
+        this.key = Keys.hmacShaKeyFor(secreteJwtString.getBytes(StandardCharsets.UTF_8));
     }
 
     public String generateToken(String email) {
         return Jwts.builder()
                 .subject(email)
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME_IN_MILSEC))
-                .signWith(key)
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME_IN_MILSEC))
+                .signWith(key, SignatureAlgorithm.HS256) // ✅ fix lỗi ở đây
                 .compact();
     }
 
