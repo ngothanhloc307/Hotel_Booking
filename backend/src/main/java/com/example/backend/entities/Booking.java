@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -34,8 +35,8 @@ public class Booking {
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
 
-    private LocalDateTime checkInDate;
-    private LocalDateTime checkOutDate;
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
 
     private BigDecimal totalPrice;
     private String bookingReference;
