@@ -38,6 +38,5 @@ public interface RoomRepository extends JpaRepository<Room, Long> {
             """)
                 List<Room> searchRooms(@Param("searchParam") String searchParam);
 
-    @Query("SELECT DISTINCT r.roomType FROM Room r")
-    List<RoomType> getAllRoomTypes();
+
 }

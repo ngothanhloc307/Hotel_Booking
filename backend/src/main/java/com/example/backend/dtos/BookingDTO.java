@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -22,21 +23,14 @@ import java.time.LocalDateTime;
 public class BookingDTO {
 
     private Long id;
-
-    private UserDTO user;
-
-    private RoomDTO room;
-    private Long roomId;
-
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
     private PaymentStatus paymentStatus;
-
-    private LocalDateTime checkInDate;
-    private LocalDateTime checkOutDate;
-
     private BigDecimal totalPrice;
     private String bookingReference;
     private LocalDateTime createdAt;
-
     private BookingStatus bookingStatus;
-
+    private RoomDTO room;
+    private Long roomId;
+    private UserDTO user;
 }

@@ -19,12 +19,14 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
     @Query("""      
     SELECT CASE WHEN COUNT (b) = 0 THEN true ELSE false END
     FROM Booking b
-    WHERE b.room.id = : roomId
-        AND :checkInDate <= b. checkOutDate
+    WHERE b.room.id = :roomId
+        AND :checkInDate <= b.checkOutDate
         AND :checkOutDate >= b.checkInDate
         AND b.bookingStatus IN ('BOOKED', 'CHECKED_IN')
     """)
-    boolean isRoomAvailable (@Param("roomId") Long roomid,
-                             @Param ("checkInDate") LocalDate checkInDate,
-                             @Param ("checkOutDate") LocalDate checkOutDate);
+
+    boolean isRoomAvailable(
+            @Param("roomId") Long roomId,
+            @Param("checkInDate") LocalDate checkInDate,
+            @Param("checkOutDate") LocalDate checkOutDate);
 }

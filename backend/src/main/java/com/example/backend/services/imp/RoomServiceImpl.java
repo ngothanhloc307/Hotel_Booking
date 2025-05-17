@@ -18,8 +18,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -126,6 +128,10 @@ public class RoomServiceImpl implements RoomService {
         if(checkInDate.isBefore(LocalDate.now())){
             throw new InvalidBookingStateAndDateException("Checkin date is can not before today");
         }
+        //validation: Ensure the check-in date is not before to day
+        if(checkOutDate.isBefore(checkInDate)){
+            throw new InvalidBookingStateAndDateException("Check out date can not before Check in date");
+        }
         //validation: Ensure the check-out date is not equal check-in date
         if(checkOutDate.isEqual(checkInDate)){
             throw new InvalidBookingStateAndDateException("Check out date is not equal Check in date");
@@ -142,7 +148,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public List<RoomType> getAllRoomTypes() {
-        return roomRepository.getAllRoomTypes();
+       return Arrays.asList(RoomType.values());
     }
 
     @Override
