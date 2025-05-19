@@ -24,7 +24,7 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     @Async
     public void sendEmail(NotificationDTO notificationDTO) {
-        log.info("inside send Email");
+        log.info("Sending Email ...");
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(notificationDTO.getRecipient());
         simpleMailMessage.setSubject(notificationDTO.getSubject());

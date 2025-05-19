@@ -2,7 +2,6 @@ package com.example.backend.controllers;
 
 import com.example.backend.dtos.Response;
 import com.example.backend.dtos.RoomDTO;
-import com.example.backend.entities.Room;
 import com.example.backend.enums.RoomType;
 import com.example.backend.services.RoomService;
 import lombok.RequiredArgsConstructor;

@@ -3,8 +3,6 @@ package com.example.backend;
 import com.example.backend.dtos.NotificationDTO;
 import com.example.backend.enums.NotificationType;
 import com.example.backend.services.NotificationService;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
